@@ -19,7 +19,6 @@ public class LeetCode_412FizzBuzz {
         list.add(String.valueOf(i));
       }
     }
-    System.out.println(list);
     return list;
   }
 }
