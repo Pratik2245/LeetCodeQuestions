@@ -7,7 +7,7 @@ public class LeetCode_1432MaxDifferenceYouCanGetFromChanginganInteger {
       for (char j = '0'; j <= '9'; j++) {
         if (ch == j)
           continue;
-        if (j == '0')
+        if (j == '0' && s.charAt(0) == ch)
           continue;
         String replaced = s.replace(ch, j);
         int ans = Integer.parseInt(replaced);
