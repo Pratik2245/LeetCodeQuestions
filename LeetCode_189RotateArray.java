@@ -1,12 +1,5 @@
 import java.util.Arrays;
 
-//? we solve using the logic of drops 
-// The drop count is the core logic:
-// 0 drops → already sorted → ✅ valid
-
-// 1 drop → sorted and rotated → ✅ valid
-
-// >1 drops → breaks sorted order in multiple places → ❌ invalid
 public class LeetCode_189RotateArray {
   public static void main(String[] args) {
     int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
