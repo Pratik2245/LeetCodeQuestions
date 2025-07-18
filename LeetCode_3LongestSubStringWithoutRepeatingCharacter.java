@@ -1,38 +1,42 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class LeetCode_3LongestSubStringWithoutRepeatingCharacter {
   public static void main(String[] args) {
-    String s = "abcabcbb";
+    String s = "";
     int ans = lengthOfLongestSubstring(s);
     System.out.println(ans);
   }
 
   public static int lengthOfLongestSubstring(String s) {
-    int lastSeen[] = new int[128];
-    // i have to set all to -1 beacuse asccii starts from 0 to 127;
-    Arrays.fill(lastSeen, -1);
-    int maxLength = 0;
+    int arr[] = new int[128];
     int left = 0;
-
-    for (int right = 0; right < s.length(); right++) {
-      char c = s.charAt(right);
-
-      // Step 2: if character was seen and it's within the current window
-      if (lastSeen[c] >= left) {
-        left = lastSeen[c] + 1; // move the left pointer
-        System.out.println("Left=" + left);
-        System.out.println("lastSeen=" + lastSeen[c]);
+    int max = 0;
+    for (int i = 0; i < s.length(); i++) {
+      // char ch = s.charAt(i);
+      arr[s.charAt(i)]++;
+      // skip the duplicates
+      while (arr[s.charAt(i)] > 1) {
+        arr[s.charAt(left)]--;
+        left++;
       }
-
-      // Step 3: update last seen index of current character
-      lastSeen[c] = right;
-
-      // Step 4: calculate max length
-      maxLength = Math.max(maxLength, right - left + 1);
+      max = Math.max(max, i - left + 1);
     }
-    return 0;
+    return max;
+  }
 
+  public int anotherMethod(String s) {
+    int arr[] = new int[26];
+    int count = 0;
+    int max = Integer.MIN_VALUE;
+    for (int i = 0; i < s.length(); i++) {
+      int ch = s.charAt(i);
+      if (arr[ch - 'a'] == 0) {
+        arr[ch - 'a'] = 1;
+        count = count + 1;
+      } else {
+        count = 0;
+      }
+      max = Math.max(count, max);
+    }
+    return max;
   }
 }
