@@ -1,2 +1,2 @@
-
-        System.out.println(num);
+};
+    int num2[] = { 3, 4 };
