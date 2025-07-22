@@ -8,14 +8,15 @@ public class LeetCode_938RangeSumOfBst {
 
   }
 
-  public int rangeSumBST(TreeNode root, int low, int high) {
-    if (root == null)
-      return 0;
-    int val = root.val;
-    if (root.val < low || root.val > high)
-      val = 0;
-    return val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
-  }
+  // public int rangeSumBST(TreeNode root, int low, int high) {
+  // if (root == null)
+  // return 0;
+  // int val = root.val;
+  // if (root.val < low || root.val > high)
+  // val = 0;
+  // return val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low,
+  // high);
+  // }
   // Queue<TreeNode> q = new LinkedList<>();
   // q.add(root);
   // int count = 0;

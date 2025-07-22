@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class LeetCode_4MedianOfSortedArray {
   public static void main(String[] args) {
     int nums1[] = { 1, 2 };
