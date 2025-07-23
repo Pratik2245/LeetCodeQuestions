@@ -16,12 +16,12 @@ public class LeetCode_11ContainerWithMostWater {
       // width = right - left;
       // area = (right - left) * Math.min(height[left], height[right]);
       maxArea = Math.max((right - left) * Math.min(height[left], height[right]), maxArea);
-      // if (height[left] < height[right]) {
-      // left++;
-      // } else {
-      // right--;
-      // }
-      int ans = (height[left] < height[right]) ? left++ : right--;
+      if (height[left] < height[right]) {
+        left++;
+      } else {
+        right--;
+      }
+      // int ans = (height[left] < height[right]) ? left++ : right--;
     }
     return maxArea;
   }
