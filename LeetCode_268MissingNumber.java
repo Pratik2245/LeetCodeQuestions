@@ -6,11 +6,21 @@ public class LeetCode_268MissingNumber {
   }
 
   public static int missingNumber(int[] nums) {
-    int ans = (nums.length * (nums.length + 1)) / 2;
-    int sum = 0;
-    for (int num : nums) {
-      sum += num;
+    int xor = 0;
+    for (int i = 0; i < nums.length; i++) {
+      xor ^= i;
+      // System.out.println(xor);
+      xor ^= nums[i];
+      // System.out.println(xor);
     }
-    return ans - sum;
+    return xor ^ nums.length;
   }
+  // public static int missingNumber(int[] nums) {
+  // int ans = (nums.length * (nums.length + 1)) / 2;
+  // int sum = 0;
+  // for (int num : nums) {
+  // sum += num;
+  // }
+  // return ans - sum;
+  // }
 }
