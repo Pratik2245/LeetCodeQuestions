@@ -5,7 +5,12 @@ public class LeetCode_60PermutationSequence {
   public static void main(String[] args) {
     String s = "abc";
     int arr[] = { 1, 2, 3 };
-    permuteSeq("", s);
+    // permuteSeq("", s);
+    List<List<Integer>> list = permute(arr);
+    for (int i = 0; i < arr.length; i++) {
+      System.out.println(list.get(i));
+    }
+
   }
 
   public static void permuteSeq(String p, String up) {
@@ -21,7 +26,7 @@ public class LeetCode_60PermutationSequence {
     }
   }
 
-  public List<List<Integer>> permute(int[] nums) {
+  public static List<List<Integer>> permute(int[] nums) {
     List<List<Integer>> result = new ArrayList<>();
     boolean[] used = new boolean[nums.length];
     List<Integer> current = new ArrayList<>();
