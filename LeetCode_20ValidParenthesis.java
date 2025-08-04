@@ -16,9 +16,10 @@ public class LeetCode_20ValidParenthesis {
           return false;
         }
       char top = stack.pop();
-      if()
+//      if()
         
       }
     }
+    return false;
   }
 }
