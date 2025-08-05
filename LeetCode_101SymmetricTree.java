@@ -1,3 +1,4 @@
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -11,9 +12,8 @@ class TreeNode {
         this.right = right;
     }
 }
-public class LeetCode_100SameTree {
-
-   public static boolean isSymmetric(TreeNode root) {
+public class LeetCode_101SymmetricTree {
+  public static boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         return helper(root.left, root.right);
     }
@@ -25,7 +25,7 @@ public class LeetCode_100SameTree {
         return helper(leftNode.left, rightNode.right) && helper(leftNode.right, rightNode.left);
     }
     public static void main(String[] args) {
-         /**
+        /**
          * Example symmetric tree (5 levels):
          * 
          *             1
@@ -33,8 +33,8 @@ public class LeetCode_100SameTree {
          *          2     2
          *         / \   / \
          *        3   4 4   3
-         *       /         \
-         *      5           5
+         *       /           \
+         *      5             5
          */
 
         TreeNode root = new TreeNode(1);
@@ -42,7 +42,6 @@ public class LeetCode_100SameTree {
         root.right = new TreeNode(2, new TreeNode(4), new TreeNode(3, null, new TreeNode(5)));
 
         boolean result = isSymmetric(root);
-        System.out.println("Is tree symmetric? " + result);  // Output: true
-    
+        System.out.println("Is tree symmetric? " + result);
     }
 }
