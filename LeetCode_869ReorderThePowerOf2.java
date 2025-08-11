@@ -1,4 +1,8 @@
 class LeetCode_869ReorderThePowerOf2 {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    
+    }
     public boolean reorderedPowerOf2(int n) {
         String target = sortedString(n);
         for (int i = 0; i < 31; i++) {
