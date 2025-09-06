@@ -11,7 +11,7 @@ public class LeetCode_119PascalsTriangle2 {
         long res=1;
         list.add((int)res);
         for(int col=1;col<=rowIndex;col++){
-            res=res*(rowIndex+1-col)/col;
+            res= res*(rowIndex+1-col)/col;
             list.add((int)res);
         }
         return list;
